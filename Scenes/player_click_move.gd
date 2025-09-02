@@ -42,7 +42,7 @@ func _physics_process(delta):
 
 	var next_point = agent.get_next_path_position()
 	var direction = (next_point - global_position).normalized()
-	velocity = direction * 5.0
+	velocity = direction * 20.0
 	move_and_slide()
 	print("Moving towards: ", next_point, " | Velocity: ", velocity)
 
