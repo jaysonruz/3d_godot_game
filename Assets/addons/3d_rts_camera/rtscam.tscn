@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf7brgwaxlmud"]
+
+[ext_resource type="Script" uid="uid://1npq0w30xud7" path="res://Assets/addons/3d_rts_camera/rtscam.gd" id="1_7mg6k"]
+
+[node name="RTScamera" type="Camera3D"]
+script = ExtResource("1_7mg6k")

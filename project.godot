@@ -18,3 +18,9 @@ config/icon="res://icon.svg"
 [dotnet]
 
 project/assembly_name="Engineer"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "teal"
+}

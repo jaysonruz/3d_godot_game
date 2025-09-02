@@ -1,0 +1,19 @@
+[gd_resource type="BoxMesh" load_steps=4 format=3 uid="uid://bllukj767bquu"]
+
+[sub_resource type="Gradient" id="Gradient_bt3o0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jetwd"]
+gradient = SubResource("Gradient_bt3o0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idj7w"]
+albedo_color = Color(1, 1, 0.411765, 1)
+metallic = 1.0
+metallic_texture = SubResource("GradientTexture2D_jetwd")
+emission_enabled = true
+emission = Color(0.514876, 0.220255, 0.298067, 1)
+ao_enabled = true
+ao_light_affect = 0.12
+grow = true
+
+[resource]
+material = SubResource("StandardMaterial3D_idj7w")

@@ -3,3 +3,4 @@ res://Assets/new_navigation_mesh.tres
 res://Scenes/player.tscn
 res://Scenes/ground.tscn
 res://Scenes/pink_obstacle.tscn
+res://Assets/addons/3d_rts_camera/rtscam.tscn

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwt6vd71jfknm"]
+[gd_scene load_steps=6 format=3 uid="uid://dwt6vd71jfknm"]
 
 [ext_resource type="NavigationMesh" uid="uid://cc6bgapehowyh" path="res://Assets/new_navigation_mesh.tres" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://c8k8war334qbw" path="res://Scenes/ground.tscn" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://8uft6qd2ojc7" path="res://Scenes/player.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://b33v2hrm2kqc3" path="res://Scenes/pink_obstacle.tscn" id="3_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://cf7brgwaxlmud" path="res://Assets/addons/3d_rts_camera/rtscam.tscn" id="5_pbw6q"]
 
 [node name="Main" type="Node3D"]
 
@@ -19,19 +20,14 @@ transform = Transform3D(3.3455, 0, -4.14407, 0, 3.676, 0, 1.52336, 0, 9.10091, -
 [node name="PinkObstacle2" parent="NavigationRegion3D" instance=ExtResource("3_rgh2o")]
 transform = Transform3D(-3.09367, 0, 5.40123, 0, 3.676, 0, -1.98549, 0, -8.41586, 7.33508, 1.94102, 3.443)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.707107, -0.640856, 0.298836, 0, 0.422618, 0.906308, -0.707107, -0.640856, 0.298836, 30, 90, 30)
-keep_aspect = 0
-fov = 56.4
+[node name="RTScamera" parent="." instance=ExtResource("5_pbw6q")]
+transform = Transform3D(0.707107, -0.683013, 0.183013, 0, 0.258819, 0.965926, -0.707107, -0.683013, 0.183013, 2.16313, 29, 2.71874)
+fov = 90.0
 
 [node name="Player" parent="." instance=ExtResource("2_idj7w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.439747, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, -8.88179e-16, -0.939693, -4.10753e-08, 0.34202, 0.34202, 1.49502e-08, 0.939693, -2.83072, 18.8424, -14.1638)
-light_energy = 2.0
-light_specular = 3.568
+transform = Transform3D(0.707107, -0.683013, 0.183013, 0, 0.258819, 0.965926, -0.707107, -0.683013, 0.183013, 2.16313, 29, 2.71874)
 shadow_enabled = true
-shadow_normal_bias = 3.0
-shadow_blur = 0.0
 sky_mode = 1
