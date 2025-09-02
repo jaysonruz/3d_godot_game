@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwt6vd71jfknm"]
+
+[ext_resource type="PackedScene" uid="uid://c8k8war334qbw" path="res://Scenes/ground.tscn" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://8uft6qd2ojc7" path="res://Scenes/player.tscn" id="2_idj7w"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Ground" parent="." instance=ExtResource("1_r150o")]
+
+[node name="Player" parent="." instance=ExtResource("2_idj7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11723, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.640856, 0.298836, 0, 0.422618, 0.906308, -0.707107, -0.640856, 0.298836, 30, 90, 30)
+keep_aspect = 0
+fov = 56.4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+sky_mode = 1
