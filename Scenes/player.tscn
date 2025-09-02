@@ -16,7 +16,6 @@ shape = SubResource("BoxShape3D_f60y1")
 mesh = SubResource("BoxMesh_f60y1")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_max_distance = 21.01
+radius = 2.0
 debug_enabled = true
-debug_use_custom = true
-debug_path_custom_color = Color(0.749383, 0.537439, 0.280981, 1)
-debug_path_custom_point_size = 5.0

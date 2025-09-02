@@ -1,5 +1,5 @@
 res://Scenes/Main.tscn
-res://Scenes/ground.tscn
+res://Assets/new_navigation_mesh.tres
 res://Scenes/player.tscn
-res://Scripts/player.gd
-res://Scenes/player_click_move.gd
+res://Scenes/ground.tscn
+res://Scenes/pink_obstacle.tscn

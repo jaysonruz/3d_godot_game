@@ -1,52 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwt6vd71jfknm"]
+[gd_scene load_steps=5 format=3 uid="uid://dwt6vd71jfknm"]
 
+[ext_resource type="NavigationMesh" uid="uid://cc6bgapehowyh" path="res://Assets/new_navigation_mesh.tres" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://c8k8war334qbw" path="res://Scenes/ground.tscn" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://8uft6qd2ojc7" path="res://Scenes/player.tscn" id="2_idj7w"]
-
-[sub_resource type="NavigationMesh" id="NavigationMesh_idj7w"]
-vertices = PackedVector3Array(-24.5, 0.5, -24.5, -24.5, 0.5, 24.5, 24.5, 0.5, 24.5, 24.5, 0.5, -24.5)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
-geometry_parsed_geometry_type = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idj7w"]
-albedo_color = Color(1, 0.196078, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_kln2b"]
-material = SubResource("StandardMaterial3D_idj7w")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://b33v2hrm2kqc3" path="res://Scenes/pink_obstacle.tscn" id="3_rgh2o"]
 
 [node name="Main" type="Node3D"]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_idj7w")
+navigation_mesh = ExtResource("1_kln2b")
 
 [node name="Ground" parent="NavigationRegion3D" instance=ExtResource("1_r150o")]
 skeleton = NodePath("../..")
 
-[node name="Player" parent="." instance=ExtResource("2_idj7w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.439747, 0)
+[node name="PinkObstacle" parent="NavigationRegion3D" instance=ExtResource("3_rgh2o")]
+transform = Transform3D(3.3455, 0, -4.14407, 0, 3.676, 0, 1.52336, 0, 9.10091, -12.4247, 1.98648, -9.28112)
+
+[node name="PinkObstacle2" parent="NavigationRegion3D" instance=ExtResource("3_rgh2o")]
+transform = Transform3D(-3.09367, 0, 5.40123, 0, 3.676, 0, -1.98549, 0, -8.41586, 7.33508, 1.94102, 3.443)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.707107, -0.640856, 0.298836, 0, 0.422618, 0.906308, -0.707107, -0.640856, 0.298836, 30, 90, 30)
 keep_aspect = 0
 fov = 56.4
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+[node name="Player" parent="." instance=ExtResource("2_idj7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.439747, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -8.88179e-16, -0.939693, -4.10753e-08, 0.34202, 0.34202, 1.49502e-08, 0.939693, -2.83072, 18.8424, -14.1638)
+light_energy = 2.0
+light_specular = 3.568
+shadow_enabled = true
+shadow_normal_bias = 3.0
+shadow_blur = 0.0
 sky_mode = 1
-
-[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
-affect_navigation_mesh = true
-carve_navigation_mesh = true
-use_3d_avoidance = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationObstacle3D"]
-transform = Transform3D(3.676, 0, 0, 0, 3.676, 0, 0, 0, 10, 7.06236, 1.83726, -0.00936031)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationObstacle3D/StaticBody3D"]
-mesh = SubResource("BoxMesh_kln2b")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationObstacle3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_rgh2o")
-debug_color = Color(0.409432, 0.480085, 0.959868, 0.42)
