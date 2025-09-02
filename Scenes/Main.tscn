@@ -36,6 +36,10 @@ fov = 56.4
 sky_mode = 1
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+use_3d_avoidance = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationObstacle3D"]
 transform = Transform3D(3.676, 0, 0, 0, 3.676, 0, 0, 0, 10, 7.06236, 1.83726, -0.00936031)
