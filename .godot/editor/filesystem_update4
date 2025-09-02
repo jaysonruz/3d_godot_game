@@ -2,3 +2,4 @@ res://Scenes/Main.tscn
 res://Scenes/ground.tscn
 res://Scenes/player.tscn
 res://Scripts/player.gd
+res://Scenes/player_click_move.gd

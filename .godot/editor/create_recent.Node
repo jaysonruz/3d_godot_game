@@ -1,7 +1,10 @@
+CollisionShape3D
+MeshInstance3D
+StaticBody3D
+NavigationObstacle3D
+NavigationAgent3D
+NavigationRegion3D
 DirectionalLight3D
 Camera3D
-MeshInstance3D
-CollisionShape3D
 MultiMeshInstance3D
 CharacterBody3D
-StaticBody3D
