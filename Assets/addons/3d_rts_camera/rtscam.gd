@@ -67,21 +67,22 @@ func _process(delta):
 		_update_camera_position()
 
 func _unhandled_input(event):
-	# Camera zoom with mouse wheel
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			current_height = max(camera_zoom_min, current_height - camera_zoom_speed * get_process_delta_time())
-			orbit_radius = current_height * 1.5  # Adjust orbit radius based on height
-			_update_camera_position()
-		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			current_height = min(camera_zoom_max, current_height + camera_zoom_speed * get_process_delta_time())
-			orbit_radius = current_height * 1.5
-			_update_camera_position()
+	## Camera zoom with mouse wheel
+	#if event is InputEventMouseButton:
+		#if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			#current_height = max(camera_zoom_min, current_height - camera_zoom_speed * get_process_delta_time())
+			#orbit_radius = current_height * 1.5  # Adjust orbit radius based on height
+			#_update_camera_position()
+		#elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			#current_height = min(camera_zoom_max, current_height + camera_zoom_speed * get_process_delta_time())
+			#orbit_radius = current_height * 1.5
+			#_update_camera_position()
 		
 	## Camera rotation with right mouse button
 	#elif event is InputEventMouseMotion and event.button_mask == MOUSE_BUTTON_LEFT:
 		#rotate_y(-event.relative.x * rotation_speed * get_process_delta_time())
 		#_update_camera_position()
+		pass
 
 func _update_camera_position():
 	# Calculate the camera's position based on its orbit parameters
