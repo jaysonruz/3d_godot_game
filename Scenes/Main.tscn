@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwt6vd71jfknm"]
+[gd_scene load_steps=9 format=3 uid="uid://dwt6vd71jfknm"]
 
 [ext_resource type="NavigationMesh" uid="uid://cc6bgapehowyh" path="res://Assets/new_navigation_mesh.tres" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://c8k8war334qbw" path="res://Scenes/ground.tscn" id="1_r150o"]
@@ -6,7 +6,26 @@
 [ext_resource type="PackedScene" uid="uid://b33v2hrm2kqc3" path="res://Scenes/pink_obstacle.tscn" id="3_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://cf7brgwaxlmud" path="res://Assets/addons/3d_rts_camera/rtscam.tscn" id="5_pbw6q"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pbw6q"]
+sky_top_color = Color(0.203762, 0.480405, 0.628043, 1)
+sky_horizon_color = Color(0.840454, 0.973714, 0.95973, 1)
+ground_bottom_color = Color(0.252355, 0.508755, 0.305181, 1)
+ground_horizon_color = Color(0.840454, 0.973714, 0.95973, 1)
+
+[sub_resource type="Sky" id="Sky_v1gob"]
+sky_material = SubResource("ProceduralSkyMaterial_pbw6q")
+
+[sub_resource type="Environment" id="Environment_jw32o"]
+background_mode = 1
+background_color = Color(0.803356, 0.858009, 0.930408, 1)
+sky = SubResource("Sky_v1gob")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jw32o")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = ExtResource("1_kln2b")
@@ -21,8 +40,10 @@ transform = Transform3D(3.3455, 0, -4.14407, 0, 3.676, 0, 1.52336, 0, 9.10091, -
 transform = Transform3D(-3.09367, 0, 5.40123, 0, 3.676, 0, -1.98549, 0, -8.41586, 7.33508, 1.94102, 3.443)
 
 [node name="RTScamera" parent="." instance=ExtResource("5_pbw6q")]
-transform = Transform3D(0.707107, -0.683013, 0.183013, 0, 0.258819, 0.965926, -0.707107, -0.683013, 0.183013, 2.16313, 29, 2.71874)
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 26.163, 31, 19.719)
+projection = 1
 fov = 90.0
+size = 66.5227
 
 [node name="Player" parent="." instance=ExtResource("2_idj7w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.439747, 0)
