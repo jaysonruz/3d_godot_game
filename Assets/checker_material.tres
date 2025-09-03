@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d0r2nou0aa81a"]
+
+[ext_resource type="Shader" uid="uid://b6a7rjottrjb8" path="res://Assets/checker_material.gdshader" id="1_1qx1n"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1qx1n")
+shader_parameter/color1 = Color(0, 0.662745, 0, 1)
+shader_parameter/color2 = Color(0, 0.556863, 0, 1)
+shader_parameter/scale = 40.0

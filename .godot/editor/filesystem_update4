@@ -1,4 +1,7 @@
 res://Scenes/Main.tscn
 res://Assets/new_navigation_mesh.tres
+res://Assets/checker_material.gdshader
+res://Assets/checker_material.tres
+res://Assets/ground.tres
 res://Assets/obstacle.tres
 res://Scenes/pink_obstacle.tscn
