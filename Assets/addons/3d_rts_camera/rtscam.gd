@@ -78,10 +78,10 @@ func _unhandled_input(event):
 			orbit_radius = current_height * 1.5
 			_update_camera_position()
 		
-	# Camera rotation with right mouse button
-	elif event is InputEventMouseMotion and event.button_mask == MOUSE_BUTTON_LEFT:
-		rotate_y(-event.relative.x * rotation_speed * get_process_delta_time())
-		_update_camera_position()
+	## Camera rotation with right mouse button
+	#elif event is InputEventMouseMotion and event.button_mask == MOUSE_BUTTON_LEFT:
+		#rotate_y(-event.relative.x * rotation_speed * get_process_delta_time())
+		#_update_camera_position()
 
 func _update_camera_position():
 	# Calculate the camera's position based on its orbit parameters

@@ -17,10 +17,9 @@ sky_material = SubResource("ProceduralSkyMaterial_pbw6q")
 
 [sub_resource type="Environment" id="Environment_jw32o"]
 background_mode = 1
-background_color = Color(0.0408837, 0.183876, 0.175049, 1)
+background_color = Color(0.114116, 0.218348, 0.125789, 0.305882)
 sky = SubResource("Sky_v1gob")
 tonemap_mode = 2
-glow_enabled = true
 
 [node name="Main" type="Node3D"]
 
@@ -40,7 +39,7 @@ transform = Transform3D(3.3455, 0, -4.14407, 0, 3.676, 0, 1.52336, 0, 9.10091, -
 transform = Transform3D(-3.09367, 0, 5.40123, 0, 3.676, 0, -1.98549, 0, -8.41586, 7.33508, 1.94102, 3.443)
 
 [node name="RTScamera" parent="." instance=ExtResource("5_pbw6q")]
-transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 26.163, 31, 19.719)
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 25.1718, 31.8496, 24.0517)
 projection = 1
 fov = 90.0
 size = 66.5227
@@ -49,6 +48,6 @@ size = 66.5227
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.439747, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.707107, -0.683013, 0.183013, 0, 0.258819, 0.965926, -0.707107, -0.683013, 0.183013, 2.16313, 29, 2.71874)
+transform = Transform3D(0.707107, -0.683013, 0.183013, 0, 0.258819, 0.965926, -0.707107, -0.683013, 0.183013, 0.0390608, 41.7352, -0.254946)
 shadow_enabled = true
 sky_mode = 1

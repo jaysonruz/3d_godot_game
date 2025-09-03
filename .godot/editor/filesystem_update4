@@ -5,3 +5,4 @@ res://Assets/checker_material.tres
 res://Assets/ground.tres
 res://Assets/obstacle.tres
 res://Scenes/pink_obstacle.tscn
+res://Assets/addons/3d_rts_camera/rtscam.gd
